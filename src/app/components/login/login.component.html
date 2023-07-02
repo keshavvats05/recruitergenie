@@ -1,0 +1,89 @@
+<mat-toolbar color="primary">
+    <mat-icon style="margin-right: 10px;cursor: pointer;" routerLink="/home">home</mat-icon>
+    <span style="    font-family: Clash Display;
+    font-size:20px;
+    font-weight: 600;
+    line-height: 5vw;cursor: pointer;" routerLink="/home">
+      Recruiter Genie</span>
+    <span class="example-spacer" ></span>
+    <div  class="signUp" style="margin: auto;">
+        <div >
+            Sign In
+        </div>
+    </div>
+   
+  </mat-toolbar>
+<div class="bg" *ngIf="result" >
+    <div style="margin-left: 40px;">
+        <img class="logo" src="../../../assets/jobGenieLogo.png" alt="" routerLink="/home">
+      </div>
+    <div class="container">
+        <div class="buttons">
+            <div class="users">
+                <!-- <a routerLink="/r-auth/register" routerLinkActive="active" (click)="getTabName('recruiter')" >Recruiters</a>
+                <a routerLink="/client-auth/register" routerLinkActive="active" (click)="getTabName('client')">Clients</a>
+                <a routerLink="/candidate-auth/register" routerLinkActive="active" (click)="getTabName('candidate')">Candidates</a> -->
+            </div>
+        </div>
+        <div class="form" >
+            <form (submit)="onSubmit(postForm)" #postForm="ngForm">
+               
+            <div class="email">
+                <label for="email" style="font-size: 15px;">Email Address</label>
+                <mat-form-field>
+                    <mat-label>Enter Email Address</mat-label>
+        
+                    <input matInput type="email" name="email" ngModel
+                     required
+                     email
+                    placeholder="Ex. xyz@gmail.com"
+                    #email="ngModel"
+                    >
+                    <mat-error *ngIf="email">Please enter a valid email</mat-error>
+        
+                </mat-form-field>
+            </div>
+            <div class="password">
+                <label for="password" style="font-size: 15px;">Password</label>
+                <mat-form-field>
+                    <mat-label>Enter a Password</mat-label>
+        
+                    <input matInput type="password" name="password" ngModel
+                     required
+                    placeholder="Full Name"
+                    #password="ngModel"
+                    >
+                    <mat-error *ngIf="password">Please enter a password</mat-error>
+        
+                </mat-form-field>
+            </div>   
+            <button type="submit" mat-raised-button [disabled]="!postForm.valid" style="height: 40px;"><span style="font-size: 15px;">Continue</span></button>
+            <mat-error *ngIf="error"><h3>{{error}}</h3></mat-error>
+
+        </form>
+        </div>
+        <h4 style="font-size: 15px;">Don't have an account? <a routerLink="/register" style="font-size: 15px;">Sign up</a></h4>
+    </div>
+</div>
+ <div  class="row pt-4 pb-4" style=" padding-top:16px">
+                    <div class="col" >
+                        <div class="lds-ring"  style=" position: relative;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);" *ngIf="!result"><div></div><div></div><div></div><div></div></div>
+        
+                    </div>
+                </div>
+                <mat-toolbar color="primary" *ngIf="result">
+                    <div class="bottom">
+                      <p>2023 @ Recruiter Genie.</p>
+                      <div class="icons">
+                          <a href="#"><i class="fa-brands fa-facebook" style="color:white;"></i></a>
+                          <a href="#"><i class="fa-brands fa-instagram" style="color:white;"></i></a>
+                          <a href="#"><i class="fa-solid fa-basketball" style="color:white;"></i></a>
+                          <a href="#"><i class="fa-brands fa-linkedin" style="color:white;"></i></a>
+                          <a href="#"><i class="fa-brands fa-twitter" style="color:white;"></i></a>            
+                      </div>
+                  </div>
+                   </mat-toolbar>
+

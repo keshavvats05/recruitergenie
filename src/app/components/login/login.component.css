@@ -1,0 +1,216 @@
+.container{
+    width:400px;
+    margin: auto;
+    font-family: 'Epilogue';
+}
+@media (max-width:550px) {
+    .container{
+        width: 300px;
+        margin-top: 15px;
+    }
+  }
+.bg{height: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    /* background: url(../../../assets/login2.jpg) #F8F8FD no-repeat;
+                background-position:100%; */
+    /* background: url(../../../assets/login.jpg) */
+}
+.logo{
+    width:120px;
+    height:120px;
+}
+.active{
+    background: #E9EBFD;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    /* justify-items: center; */
+    
+    align-items: center;
+}
+
+
+.buttons button{
+    width: 28.3vw;
+    height: 3.47vw;
+    padding: 0.83vw 1.11vw;
+    border: 1px solid #CCCCF5;
+    font-style: normal;
+    font-weight: 700;
+    /* font-size: 1.11vw; */
+    line-height: 160%;
+    color: #4640DE;
+    margin-bottom: 1.6vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button>img{
+    margin: 10px;
+}
+
+.buttons p{
+    color: #202430;
+    opacity: 0.5;
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: 1.11vw; */
+    /* line-height: 160%; */
+    margin-bottom: 2.5vw; 
+    margin-top: 1.5vw; 
+    width:100%; 
+    text-align:center; 
+    border-bottom: 1px solid #202430; 
+    line-height:0.01em;
+}
+.buttons p>span{
+    background:#fff;
+    padding:0 10px;
+}
+
+.form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.52vw;
+}
+.form label{
+    font-weight: 600;
+    /* font-size: 1.11vw; */
+    line-height: 160%;
+    color: #515B6F;
+    margin-bottom: 0.27vw;
+}
+/* .form input{
+    width: 100%;
+    height: 3.47vw;
+    padding: 0.83vw 1.11vw;
+    border: 1px solid #D6DDEB;
+} */
+
+.form input::placeholder{
+    color: #A8ADB7;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+.form button{
+    width: 100%;
+    height: 3.47vw;
+    background: #4640DE;
+    color: #ffffff;
+    padding: 0.83vw 1.66vw;
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    /* font-size: 1.11vw; */
+    line-height: 160%;
+    border: none;
+    margin-bottom: 1.66vw;
+    cursor: pointer;
+
+}
+
+.container h4{
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: 1.11vw; */
+    line-height: 160%;
+    color: #202430b5;
+    margin-bottom: 1.66vw;
+}
+
+.container h4>a{
+    text-decoration: none;
+    font-weight: 600;
+    /* font-size: 1.11vw; */
+    line-height: 150%;
+    text-align: center;
+    color: #4640DE;
+    cursor: pointer;
+
+}
+
+.container>p{
+    font-weight: 400;
+    /* font-size: 0.97vw; */
+    line-height: 160%;
+    color: #7C8493;
+}
+
+.container p>a{
+    text-decoration: none;
+    color: #4640DE;
+    cursor: pointer;
+
+}
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #6760eb transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @media (min-width: 700px) {
+    .signUp {
+        position: relative;right: 100px;
+    }
+  }
+  .icons{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+  
+}
+.bottom{
+    display: flex;
+    margin: 2.9vw 0;
+    justify-content: space-between;
+}
+@media (min-width:500px) {
+    .icons{
+        position:absolute;
+        right: 0;
+    }
+  }
+  @media (max-width:500px) {
+    .bottom{
+    display: flex;
+    flex-direction: column;
+
+    }
+  }

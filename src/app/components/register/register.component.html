@@ -1,0 +1,96 @@
+<mat-toolbar color="primary">
+    <mat-icon style="margin-right: 10px;cursor: pointer;" routerLink="/home">home</mat-icon>
+    <span style="    font-family: Clash Display;
+    font-size:20px;
+    font-weight: 600;
+    line-height: 5vw;cursor: pointer;" routerLink="/home">
+      Recruiter Genie</span>
+    <span class="example-spacer"></span>
+    <div style="margin: auto;">
+        <div class="signUp">
+            Sign Up
+        </div>
+    </div>
+   
+  </mat-toolbar>
+<div style="margin-left: 40px;"  *ngIf="result">
+    <img class="logo" src="../../../assets/jobGenieLogo.png" alt="" routerLink="/home">
+  </div>
+<div class="container" *ngIf="result">
+    <div class="form" >
+        <form (submit)="onSubmit(postForm)" #postForm="ngForm">
+           
+        <div class="full-name"> 
+            <label for="full-name"><span style="font-size:15px;">Full Name</span></label>
+            <mat-form-field>
+                <mat-label>Enter Full Name</mat-label>
+    
+                <input matInput type="text" name="name" ngModel
+                 required
+                minlength="3"
+                placeholder="Full Name"
+                #name="ngModel"
+                >
+                <mat-error *ngIf="name">Please enter your name</mat-error>
+    
+            </mat-form-field>
+        </div>
+        <div class="email">
+            <label for="email"><span style="font-size: 15px;">Email Address</span></label>
+            <mat-form-field>
+                <mat-label>Enter Email Address</mat-label>
+    
+                <input matInput type="email" name="email" ngModel
+                 required
+                 email
+                placeholder="Ex. xyz@gmail.com"
+                #email="ngModel"
+                >
+                <mat-error *ngIf="email">Please enter a valid email</mat-error>
+    
+            </mat-form-field>
+        </div>
+        <div class="password">
+            <label for="password"><span style="font-size: 15px;">Password</span></label>
+            <mat-form-field>
+                <mat-label>Enter a Password</mat-label>
+    
+                <input matInput type="password" name="password" ngModel
+                 required
+                placeholder="Full Name"
+                #password="ngModel"
+                >
+                <mat-error *ngIf="password">Please enter a password</mat-error>
+    
+            </mat-form-field>
+        </div>   
+        <button type="submit" mat-raised-button [disabled]="!postForm.valid" style="height: 40px;"><span style="font-size: 15px;">Continue</span></button>
+        <mat-error *ngIf="error">
+            <h3>            {{error}}
+            </h3>
+          </mat-error>
+    </form>
+    </div>
+    <h4 style="font-size: 15px;">Already have an account? <a routerLink="/login" style="font-size: 15px;">Login</a></h4>
+</div>
+<div  class="row pt-4 pb-4" style=" padding-top:16px">
+    <div class="col" >
+        <div class="lds-ring"  style=" position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);" *ngIf="!result"><div></div><div></div><div></div><div></div></div>
+
+    </div>
+</div>
+<mat-toolbar color="primary" *ngIf="result">
+    <div class="bottom">
+      <p>2023 @ Recruiter Genie.</p>
+      <div class="icons">
+          <a href="#"><i class="fa-brands fa-facebook" style="color:white;"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram" style="color:white;"></i></a>
+          <a href="#"><i class="fa-solid fa-basketball" style="color:white;"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin" style="color:white;"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter" style="color:white;"></i></a>            
+      </div>
+  </div>
+   </mat-toolbar>
