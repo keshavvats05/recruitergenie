@@ -15,7 +15,6 @@
   </mat-toolbar>
 <div class="container pl-0 pr-0">
     <div class="d-flex ">
-        <!-- <div *ngIf="!result" class="lds-ring"  style="margin:auto"><div></div><div></div><div></div><div></div></div> -->
         <div class="container pt-2 p-0">
          
            
@@ -68,9 +67,7 @@
                                                           </mat-slider>
                                                           
                                                     </span>
-                                                    <!-- <input style="height: 50px;" type="number" min="0" class="form-control input" aria-label="With textarea" placeholder="e.g. 05" formControlName="experience" name="experience">
-                                                    <span *ngIf="!postForm.get('experience')?.valid && postForm.get('experience')?.touched" class="help-block" class="errors" style="position: relative;left: 7px;">Please enter a positive value
-                        </span> -->
+                              
 
 
                         </div>
@@ -165,10 +162,7 @@
                     class="my-table" class="table  custom-table" style="height: 500px;font-size: medium; margin-top:20px">
                     <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
                         <tr>
-                            <th scope="col">
-                                <i class="fa fa-square" style="font-size:22px;border-radius: 3px;
-                                                              border: 3px solid lightgrey;color:white;"></i>
-                            </th>
+                        
                             <th scope="col">Full Name &nbsp;<i class="fa-solid fa-sort"></i>
                             </th>
                             <th scope="col">Hiring Stage &nbsp;<i class="fa-solid fa-sort"></i>
@@ -187,10 +181,7 @@
                     <tbody
                         style="padding-top: 50px;">
                         <tr *ngFor="let candidate of filteredCandidate; let i=index" style=" border: 1px solid lightgrey;font-weight: 400;height:fit-content;font:500 black;height:30px;">
-                            <td scope="col">
-                                <i class="fa fa-square" style="font-size:22px;border-radius: 3px;
-                                                              border: 3px solid lightgrey;color:white;"></i>
-                            </td>
+                        
                             <td class="candidateDetails">
 
                                 {{candidate.candidateName}}</td>
