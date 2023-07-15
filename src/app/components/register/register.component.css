@@ -102,10 +102,7 @@
 
 .form input::placeholder{
     color: #A8ADB7;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.11vw;
-    line-height: 160%;
+ 
 }
 
 .form button{
