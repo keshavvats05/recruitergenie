@@ -163,17 +163,17 @@
                     <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
                         <tr>
                         
-                            <th scope="col">Full Name &nbsp;<i class="fa-solid fa-sort"></i>
+                            <th scope="col">Full Name &nbsp;
                             </th>
-                            <th scope="col">Hiring Stage &nbsp;<i class="fa-solid fa-sort"></i>
+                            <th scope="col">Hiring Stage &nbsp;
                             </th>
-                            <th scope="col">Applied Date &nbsp;<i class="fa-solid fa-sort"></i>
+                            <th scope="col">Applied Date &nbsp;
                             </th>
                             <th scope="col">Job Role
-                                <i class="fa-solid fa-sort"></i>
+                                
                             </th>
                             <th scope="col">Location
-                                <i class="fa-solid fa-sort"></i>
+                                
                             </th>
                           
                         </tr>
@@ -188,11 +188,11 @@
                         
                             <td style="height:15px">
                                 <button [ngClass]="{
-                                                                    'Inreview': candidate.candidateInterviewStatus === 'Inreview',
-                                                                    'Shortlisted': candidate.candidateInterviewStatus === 'Shortlisted',
-                                                                    'Declined': candidate.candidateInterviewStatus === 'Declined',
-                                                                    'Hired': candidate.candidateInterviewStatus === 'Hired',
-                                                                    'Interviewed': candidate.candidateInterviewStatus === 'Interviewed',
+                             'Inreview': candidate.candidateInterviewStatus === 'Inreview',
+                             'Shortlisted': candidate.candidateInterviewStatus === 'Shortlisted',
+                             'Declined': candidate.candidateInterviewStatus === 'Declined',
+                             'Hired': candidate.candidateInterviewStatus === 'Hired',
+                             'Interviewed': candidate.candidateInterviewStatus === 'Interviewed',
                                                                   }" style="padding:5px;border-radius:20px;justify-content: center;width:100px;background-color: #fff;font-weight: 500;">{{candidate.candidateInterviewStatus}}</button>
                             </td>
                            
