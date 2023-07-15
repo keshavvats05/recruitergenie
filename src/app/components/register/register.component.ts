@@ -24,6 +24,10 @@ this.registeredPerson=registeredPerson
   error:string="";
 
   onSubmit(form:NgForm){
+    if (!form.valid){
+      this.error='Invalid Credentials'
+      return
+    }
     this.result=false
     const email=form.value.email;
     const password=form.value.password;

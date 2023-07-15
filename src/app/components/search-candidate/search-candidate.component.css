@@ -1,337 +1,261 @@
-@media (max-width:540px) {
-    .header{
-       width:540px;
-    }
-    .footer{
-        width: 540px;
-    }
+@media (max-width: 540px) {
+  .header {
+    width: 540px;
   }
+  .footer {
+    width: 540px;
+  }
+}
+button{
+  border-radius: 0px;
+}
+
+input {
+  border-radius: 0 !important;
+  border: 1.5px solid #d6ddeb;
+}
+
+select {
+  border-radius: 0 !important;
+  border: 1.5px solid #d6ddeb;
+}
+.form-control::placeholder {
+  font-family: "Epilogue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
 
 
-  button {
-    background-color: #4640de;
-    border-radius: 0px;
-    padding: 5px 15px 5px 15px;
-  }
- 
-  .btn:focus,
-  .btn:active {
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: #4640de !important;
-  }
-  .btn:hover {
-    background-color: #4640de;
-  }
-  input {
-    border-radius: 0 !important;
-    border: 1.5px solid #d6ddeb;
-  }
-  
-  
-  select {
-    border-radius: 0 !important;
-    border: 1.5px solid #d6ddeb;
-  }
-  .form-control::placeholder {
-    /* Body/Normal - Regular */
-  
-    font-family: "Epilogue";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    /* identical to box height, or 26px */
-  
-    /* Neutrals/40 */
-  
-    color: #a8adb7;
-  }
+  color: #a8adb7;
+}
 
-  
-  thead {
-    margin-bottom: 10px;
-  }
-  .applicationBtn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 21px;
-    gap: 10px;
-  
-    width: 155px;
-    height: 46px;
-  
-    /* Lights/Blue */
-  
-    background: #e9ebfd;
-    /* Brands/Primary */
-  
-    border: 1.5px solid #4640de;
-  }
-  .applicationBtn span {
-    /* width: 113px; */
-    /* height: 22px; */
-  
-    /* Button / Small */
-  
-    font-family: "Epilogue";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 160%;
-    /* or 22px */
-  
-    text-align: center;
-  
-    /* Brands/Primary */
-  
-    color: #4640de;
-  }
-
-  .yellowStar {
-    /* background-color: yellow; */
-    background-color: yellow;
-    color: yellow;
-    fill: yellow;
-  }
-  .filled {
-    color: yellow;
-  }
-  th .rounded {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 15px;
-  }
-  
-  .Interviewed {
-    color: #26a4ff;
-    border: 2px solid #26a4ff;
-  }
-  .Shortlisted {
-    color: #4640de;
-    border: 2px solid #4640de;
-  }
-  .Inreview {
-    color: #ffb836;
-    border: 2px solid #ffb836;
-  }
-  .Declined {
-    color: #ff6550;
-    border: 2px solid #ff6550;
-  }
-  .Hired {
-    color: #56cdad;
-    border: 2px solid #56cdad;
-  }
-  .custom-table tbody tr:nth-of-type(odd) {
-    background: #f8f8fd;
-  }
-  
-  .custom-table tbody tr:nth-of-type(even) {
-    background: #ffffff;
-  }
-  /* .custom-table th{
-      border: none;
-    } */
-  
-  .candidateDetails {
-    /* Body/Normal - Medium */
-  
-    font-family: "Epilogue";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 160%;
-    /* identical to box height, or 26px */
-  
-    /* Neutrals/100 */
-  
-    color: #25324b;
-  }
-  .tableHeader {
-    /* Body/Normal - Regular */
-  
-    font-family: "Epilogue";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    /* identical to box height, or 26px */
-  
-    /* Neutrals/60 */
-  
-    color: #7c8493;
-  }
-  .pagination {
-    justify-content: end;
-  }
-  .title {
-    /* width: 700px; */
-    height: 38px;
-  
-    font-family: "Clash Display";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 120%;
-  
-    display: flex;
-    align-items: center;
-    
-    margin: 0px;
-  }
-
-  
-  .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  
-  /* Media query for larger devices */
-  @media (min-width: 1350px) {
-    .container {
-      max-width: 1550px;
-    }
-  }
-  @media (min-width: 1500px) {
-    .container {
-      max-width: 1700px;
-    }
-  }
+thead {
+  margin-bottom: 10px;
+}
 
 
-  .yrs {
-    /* box-sizing: border-box; */
-  
-    /* Auto layout */
-  
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 16px 12px 8px;
-    border: 1px solid #d6ddeb;
-    gap: 8px;
-  
-    width: 90px;
-    height: 50px;
-    position: relative;
-    bottom: 10px;
-  }
-  .yrsBox {
-    padding-top: 17px;
-    padding-bottom: 45px;
-    display: flex;
-    width: 228px;
-    justify-content: space-between;
-    gap: 80px;
-  
-    height: 28px;
-  
-    justify-content: space-between;
-  }
-  .vl_slider {
-    border-left: 2px solid #d6d8dd;
-    height: 25px;
-    position: relative;
-    margin-top: 6px;
-  }
-  .sec_title {
-    /* width: 228px; */
-    height: 28px;
-  
-    /* Body/Normal - SemiBold */
-  
-    font-family: "Epilogue";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 160%;
-  
-    display: flex;
-    align-items: center;
- 
-  
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  @media (max-width:730px) {
-    .block{
-      display: block;
-  }
-  }
-  .annualSalary{
-    display: flex;
-    flex-direction:row;
-    }
-  @media (max-width:468px) {
-    .input{
-      width: max-content !important;
-      /* background-color: red; */
-  }
-  .annualSalary{
+.yellowStar {
+  /* background-color: yellow; */
+  background-color: yellow;
+  color: yellow;
+  fill: yellow;
+}
+.filled {
+  color: yellow;
+}
+th .rounded {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 15px;
+}
+
+.Interviewed {
+  color: #26a4ff;
+  border: 2px solid #26a4ff;
+}
+.Shortlisted {
+  color: #4640de;
+  border: 2px solid #4640de;
+}
+.Inreview {
+  color: #ffb836;
+  border: 2px solid #ffb836;
+}
+.Declined {
+  color: #ff6550;
+  border: 2px solid #ff6550;
+}
+.Hired {
+  color: #56cdad;
+  border: 2px solid #56cdad;
+}
+.candidateDetails {
+  /* Body/Normal - Medium */
+
+  font-family: "Epilogue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  /* identical to box height, or 26px */
+
+  /* Neutrals/100 */
+
+  color: #25324b;
+}
+.tableHeader {
+  /* Body/Normal - Regular */
+
+  font-family: "Epilogue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  /* identical to box height, or 26px */
+
+  /* Neutrals/60 */
+
+  color: #7c8493;
+}
+
+.title {
+  /* width: 700px; */
+  height: 38px;
+
+  font-family: "Clash Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
+
+  margin: 0px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Media query for larger devices */
+@media (min-width: 1350px) {
+  .container {
+    max-width: 1550px;
   }
-  .view{
+}
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1700px;
+  }
+}
+
+.yrs {
+  /* box-sizing: border-box; */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px 12px 8px;
+  border: 1px solid #d6ddeb;
+  gap: 8px;
+
+  width: 90px;
+  height: 50px;
+  position: relative;
+  bottom: 10px;
+}
+.yrsBox {
+  padding-top: 17px;
+  padding-bottom: 45px;
+  display: flex;
+  width: 228px;
+  justify-content: space-between;
+  gap: 80px;
+
+  height: 28px;
+
+  justify-content: space-between;
+}
+.vl_slider {
+  border-left: 2px solid #d6d8dd;
+  height: 25px;
+  position: relative;
+  margin-top: 6px;
+}
+.sec_title {
+  /* width: 228px; */
+  height: 28px;
+
+  /* Body/Normal - SemiBold */
+
+  font-family: "Epilogue";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 160%;
+
+  display: flex;
+  align-items: center;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+@media (max-width: 730px) {
+  .block {
+    display: block;
+  }
+}
+.annualSalary {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 468px) {
+  .input {
+    width: max-content !important;
+    /* background-color: red; */
+  }
+  .annualSalary {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
-  
+  .view {
+    display: flex;
+    flex-direction: column;
   }
-  .salary{
-    width: 156px;
-    white-space: nowrap;
-  
-  }
-  .input{
+}
+.salary {
+  width: 156px;
+  white-space: nowrap;
+}
+.input {
   width: 430px;
-  }
-  
-  
-  @media (max-width:960px) {
-  .disCol{
-    display: flex ;
+}
+
+@media (max-width: 960px) {
+  .disCol {
+    display: flex;
     flex-direction: column;
   }
-  }
-  
+}
 
-  .info{
-    padding-top:20px;
-    /* padding-bottom: 20px; */
-  }
-  @media (min-width: 700px) {
-    .mainTitle {
-        position: relative;right: 100px;
-    }
-  }
-  .icons{
-    display: flex;
-    width: 200px;
-    justify-content: space-between;
-  
+.info {
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
 }
-.bottom{
-    display: flex;
-    margin: 2.9vw 0;
-    justify-content: space-between;
-}
-@media (min-width:500px) {
-    .icons{
-        position:absolute;
-        right: 0;
-    }
+@media (min-width: 700px) {
+  .mainTitle {
+    position: relative;
+    right: 100px;
   }
-  @media (max-width:500px) {
-    .bottom{
+}
+.icons {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.bottom {
+  display: flex;
+  margin: 2.9vw 0;
+  justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .icons {
+    position: absolute;
+    right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .bottom {
     display: flex;
     flex-direction: column;
-
-    }
   }
+}

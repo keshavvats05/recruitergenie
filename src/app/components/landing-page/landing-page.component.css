@@ -1,6 +1,6 @@
 .logo{
-    width:15vw;
-    height:15vw;
+    width:10vw;
+    height:10vw;
 }
 .container{
     position: relative;
@@ -8,16 +8,21 @@
     padding-left: 0px;
     padding-right: 0px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     width: 98.9vw;
-    
-    
+    font-family: 'Inter';
+
 }
 .text{
+    width: 52vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    margin-bottom: 4.44vw;
 }
+
 .text h2{
     font-family: Clash Display;
     font-size: 4.58vw;
@@ -36,21 +41,9 @@
     width: 33.18vw;
     margin: 1.59vw 0;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Inter';
-    padding-top: 3.33vw;
-}
 
-.text{
-    width: 52vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4.44vw;
-}
+
+
 
 .text h5{
     margin-bottom: 0.83vw;
@@ -67,14 +60,7 @@
     line-height: 3vw;
     color: #101828;
 }
-/* .text p{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.38vw;
-    line-height: 2vw;
-    text-align: center;
-    color: #667085;
-} */
+
 .cards{
     display: flex;
     flex-wrap: wrap;
@@ -127,8 +113,7 @@
     font-family: 'Epilogue';
     font-weight: 700;
     font-size: 1.25vw;
-    background-color: #4640DE;
-    color: #ffffff;
+    background-color: #4640DE !important;
     padding: 0.97vw 1.87vw;
 }
 .icons{

@@ -18,11 +18,7 @@
         <img class="logo" src="../../../assets/jobGenieLogo1.jpg" alt="" routerLink="/home">
       </div>
     <div class="container">
-        <div class="buttons">
-            <div class="users">
-         
-            </div>
-        </div>
+
         <div class="form" >
             <form (submit)="onSubmit(postForm)" #postForm="ngForm">
                
@@ -55,23 +51,24 @@
         
                 </mat-form-field>
             </div>   
-            <button type="submit" mat-raised-button [disabled]="!postForm.valid" style="height: 40px;"><span style="font-size: 15px;">Continue</span></button>
+            
+            <button type="submit" mat-raised-button  style="height: 40px;" color="primary"><span style="font-size: 15px;">Continue</span></button>
             <mat-error *ngIf="error"><h3>{{error}}</h3></mat-error>
 
         </form>
         </div>
-        <h4 style="font-size: 15px;">Don't have an account? <a routerLink="/register" style="font-size: 15px;">Sign up</a></h4>
+        <h4 >Don't have an account? <a routerLink="/register" >Sign up</a></h4>
     </div>
 </div>
- <div  class="row pt-4 pb-4" style=" padding-top:16px">
-                    <div class="col" >
-                        <div class="lds-ring"  style=" position: relative;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);" *ngIf="!result"><div></div><div></div><div></div><div></div></div>
-        
-                    </div>
-                </div>
+<div  class="row" >
+    <div class="col" >
+        <div class="lds-ring"  style=" position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);" *ngIf="!result"><div></div><div></div><div></div><div></div></div>
+
+    </div>
+</div>
                 <mat-toolbar color="primary" *ngIf="result">
                     <div class="bottom">
                       <p>2023 @ Recruiter Genie.</p>
