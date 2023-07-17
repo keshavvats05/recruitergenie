@@ -18,6 +18,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchCandidateComponent } from './components/search-candidate/search-candidate.component';
+import { AddCandidateComponent } from './components/add-candidate/add-candidate.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { AlertComponent } from './components/alert/alert.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { SearchCandidateComponent } from './components/search-candidate/search-c
     LandingPageComponent,
     RegisterComponent,
     LoginComponent,
-    SearchCandidateComponent
+    SearchCandidateComponent,
+    AddCandidateComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,9 @@ import { SearchCandidateComponent } from './components/search-candidate/search-c
     MatInputModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

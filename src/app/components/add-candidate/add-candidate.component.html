@@ -1,0 +1,116 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [opened]="false"  style="width:30vw;">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/home" routerLink="/home"><span class="sidenav">Home</span></a>
+            <a mat-list-item routerLink="/searchCandidate"><span class="sidenav">Search Candidate</span></a>
+            <a mat-list-item (click)="onLogout()"><span class="sidenav">Logout</span></a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height:97vh;">
+            <mat-toolbar class="header" color="primary">
+                <button mat-icon-button (click)="sidenav.toggle();">
+                    <mat-icon  >menu</mat-icon>
+                </button>
+                  <div style="margin: auto;">
+                        Add Candidate
+                </div>
+                <button  style="width: 100px;margin-right: 10px;    font-family: 'Epilogue'; font-weight:600;
+                font-size: 1.1vw;
+                " mat-raised-button (click)="onLogout()"><span style="font-size: 15px;" >Logout</span></button>
+               
+              </mat-toolbar>
+              <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                    <div class="col-6">
+                        <span class="sec_title" style="width: 200px;">Candidate Name*</span>
+                    </div>
+                    <div class="col">
+                        <input style="height:50px" type="text" id="candidateName" class="form-control input" aria-label="With textarea" placeholder="e.g.Kavitha" name="candidateName" formControlName="candidateName">
+                        <span *ngIf="!postForm.get('candidateName')?.valid && postForm.get('candidateName')?.touched"
+                        class="help-block" class="errors">Please enter the candidate's name</span>
+                    </div>
+                </div>
+                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                    <div class="col-6">
+                        <span class="sec_title" style="width: 200px;">Job Role</span>
+                    </div>
+                    <div class="col">
+                        <input style="height:50px" type="text" id="jobRole" class="form-control input" aria-label="With textarea" placeholder="e.g Frontend Developer" name="jobRole" formControlName="jobRole">
+            
+                    </div>
+                </div>
+                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                    <div class="col-6">
+                        <span class="sec_title" style="width: 200px;">Current Location</span>
+                    </div>
+                    <div class="col">
+                        <input style="height:50px" type="text" id="curLocation" class="form-control input" aria-label="With textarea" placeholder="e.g.Bangalore" name="curLocation" formControlName="curLocation">
+            
+                    </div>
+                </div>
+            
+                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                    <div class="col-6">
+                        <span class="sec_title" style="width: 200px;">Total Work Experience</span>
+                    </div>
+                    <div class="col">     
+                        <input style="height:50px" type="number" min="0" id="curLocation" class="form-control input" aria-label="With textarea" placeholder="e.g. 5" name="experience" formControlName="experience">
+                         <span *ngIf="!postForm.get('experience')?.valid && postForm.get('experience')?.touched"
+                         class="help-block" class="errors">Please enter a positive value </span>
+                    </div>
+                </div>
+            
+                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                    <div class="col-6">
+                        <span class="sec_title" style="width: 200px;">Expected Salary</span>
+                    </div>
+                    <div class="col">        
+                        <input style="height:50px" type="number" min="0" id="curLocation" class="form-control input" aria-label="With textarea" placeholder="e.g. 500000" name="salary" formControlName="salary">
+                         <span *ngIf="!postForm.get('salary')?.valid && postForm.get('salary')?.touched"
+                         class="help-block" class="errors">Please enter a positive value </span>
+                    </div>
+                </div>
+            
+            <div class="row disCol" style="margin:0px; padding-bottom:16px; padding-top:16px">
+                <div class="col-6">
+                    <span class="sec_title" style="  white-space: nowrap;
+                    ">Job Types</span>
+                </div>
+                <div class="col">
+                    <p style="font-family:Epilogue;font-size:16px;color:#515B6F;font-weight:600" class="sec_title">Select job Type</p>
+                    <select class="form-select width" aria-label="Default select example" formControlName="jobType" name="jobType" style="outline: none !important;width: 250px;">
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Part-Time">Part-Time</option>
+                        <option value="Advisory">Advisory</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Others">Others</option>
+                        <option value="All">All</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                <div class="col-6">
+                    <span class="sec_title" style="width: 200px;">Hiring Stage </span>
+                </div>
+                <div class="col">
+                    <p style="font-family:Epilogue;font-size:16px;color:#515B6F;font-weight:600" class="sec_title">Select job Type</p>
+                    <select class="form-select width" aria-label="Default select example" formControlName="hiringStage" name="HiringStage" style="outline: none !important;width: 250px;">
+                        <option value="Interviewed">Interviewed</option>
+                        <option value="Inreview">Inreview</option>
+                        <option value="Hired">Hired</option>
+                        <option value="Shortlisted">Shortlist</option>
+                        <option value="Declined">Declined</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" mat-raised-button color="primary" style="width: 205px;    background-color: #4640DE;position:absolute;right:0px;margin-top:16px;
+            " ><i class="fa-solid fa-plus"></i> Add Candidate</button>
+            <app-alert *ngIf="isSubmitted" (close)="onClose()"></app-alert>
+            </form>
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

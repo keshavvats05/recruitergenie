@@ -1,10 +1,8 @@
 <mat-toolbar class="header" color="primary">
-    <mat-icon style="margin-right: 10px;cursor: pointer;" routerLink="/home">home</mat-icon>
-    <span style="    font-family: Clash Display;
-    font-size:20px;
-    font-weight: 600;
-    line-height: 5vw;cursor: pointer;" routerLink="/home">
-      Recruiter Genie</span>
+    <button mat-icon-button (click)="sidenav.toggle();">
+        <mat-icon  >menu</mat-icon>
+    </button>
+   
       <div style="margin: auto;">
             Candidate Search
     </div>
@@ -13,220 +11,280 @@
     " mat-raised-button (click)="onLogout()"><span style="font-size: 15px;" >Logout</span></button>
    
   </mat-toolbar>
-<div class="container pl-0 pr-0">
-    <div class="d-flex ">
-        <div class="container pt-2 p-0">
-         
-           
-            <div class="container">
-                <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-                    <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
-                        <div class="col-6">
-                            <span class="sec_title" style="width: 200px;">Job Role</span>
-                        </div>
-                        <div class="col">
-                            <input style="height:50px" type="text" id="jobRole" class="form-control input" aria-label="With textarea" placeholder="e.g Frontend Developer" name="jobRole" formControlName="jobRole">
-
-                        </div>
-                    </div>
-                    <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
-                        <div class="col-6">
-                            <span class="sec_title" style="width: 200px;">Current Location</span>
-                        </div>
-                        <div class="col">
-                            <input style="height:50px" type="text" id="curLocation" class="form-control input" aria-label="With textarea" placeholder="e.g.Bangalore" name="curLocation" formControlName="curLocation">
-
-                        </div>
-                    </div>
-                 
-                    <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px; padding-top:16px">
-                        <div class="col-6">
-                            <span class="sec_title">Experience</span>
-                        </div>
-                        <div class="col">
-                             <div class="yrsBox">
-                                                        <div class="yrs">
-                                                            <span style="color: #202430;">Yrs</span>
-                                                            <div class="vl_slider"></div>
-                                                            {{yrsValue}}
-                                                        </div>
-                                                        <span style="color: #7C8493;width: 18;height: 26;">to</span>
-                                                         <div>
-                                                            <div class="yrs">
-                                                                <span style="color: #202430;">Yrs</span>
-                            
-                                                                <div class="vl_slider"></div>
-                                                                {{yrsHighValue}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                            <span >
-                                                        <mat-slider color='blue' min="0" max="25" class="w-50">
-                                                            <input [(value)]=yrsValue matSliderStartThumb>
-                                                            <input [(value)]=yrsHighValue matSliderEndThumb>
-                                                          </mat-slider>
-                                                          
-                                                    </span>
-                              
-
-
-                        </div>
-                    </div>
-                 
-                    <div class="row disCol"style="margin:0px; padding-top:16px; padding-bottom:16px">
-                        <div class="col-6">
-                            <span class="sec_title" style="width: 200px;">Annual Salary</span>
-                        </div>
-                        <div class="col">
-                            <div class="yrsBox">
-                                <div class="yrs">
-                                    <span style="color: #202430;">₹</span>
-                                    <div class="vl_slider"></div>
-                                    {{value}}
-                                </div>
-                                <span style="color: #7C8493;width: 18;height: 26;">to</span>
-                                 <div>
-                                    <div class="yrs">
-                                        <span style="color: #202430;">₹</span>
-    
-                                        <div class="vl_slider"></div>
-                                        {{highValue}}
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [opened]="false"  style="width:30vw;">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/home"><span class="sidenav">Home</span></a>
+            <a mat-list-item routerLink="/addCandidate"><span class="sidenav">Add Candidate</span></a>
+            <a mat-list-item (click)="onLogout()"><span class="sidenav">Logout</span></a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height:89vh;">
+          
+            <div class="container pl-0 pr-0">
+                <div class="d-flex ">
+                    <div class="container pt-2 p-0">
+                     
+                       
+                        <div class="container">
+                            <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+                                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                                    <div class="col-6">
+                                        <span class="sec_title" style="width: 200px;">Job Role</span>
+                                    </div>
+                                    <div class="col">
+                                        <input style="height:50px" type="text" id="jobRole" class="form-control input" aria-label="With textarea" placeholder="e.g Frontend Developer" name="jobRole" formControlName="jobRole">
+            
                                     </div>
                                 </div>
-                            </div> 
-    <span >
-                                 <mat-slider color='blue' min="0" max="10000000" class="w-50">
-                                        <input [(value)]=value matSliderStartThumb>
-                                        <input [(value)]=highValue matSliderEndThumb>
-                                      </mat-slider>
-                                  
-                            </span>
-                        </div>
-
-                     
-                </div>
-                 
-                    <div class="row" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px;">
-                        <div class="col-6" style="margin:auto">
-                            <span *ngIf="(!postForm.get('maxSalary')?.valid && postForm.get('maxSalary')?.touched) || (!postForm.get('minSalary')?.valid && postForm.get('minSalary')?.touched) " class="help-block" class="errors" style="position: relative;top:18px" >Please enter a value greater than 0
-                            </span>
-                        </div>
-                       
-                    </div>
+                                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-top:16px; padding-bottom:16px">
+                                    <div class="col-6">
+                                        <span class="sec_title" style="width: 200px;">Current Location</span>
+                                    </div>
+                                    <div class="col">
+                                        <input style="height:50px" type="text" id="curLocation" class="form-control input" aria-label="With textarea" placeholder="e.g.Bangalore" name="curLocation" formControlName="curLocation">
             
+                                    </div>
+                                </div>
+                             
+                                <div class="row disCol" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px; padding-top:16px">
+                                    <div class="col-6">
+                                        <span class="sec_title">Experience</span>
+                                    </div>
+                                    <div class="col">
+                                         <div class="yrsBox">
+                                                                    <div class="yrs">
+                                                                        <span style="color: #202430;">Yrs</span>
+                                                                        <div class="vl_slider"></div>
+                                                                        {{yrsValue}}
+                                                                    </div>
+                                                                    <span style="color: #7C8493;width: 18;height: 26;">to</span>
+                                                                     <div>
+                                                                        <div class="yrs">
+                                                                            <span style="color: #202430;">Yrs</span>
+                                        
+                                                                            <div class="vl_slider"></div>
+                                                                            {{yrsHighValue}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                        <span >
+                                                                    <mat-slider color='blue' min="0" max="25" class="w-50">
+                                                                        <input [(value)]=yrsValue matSliderStartThumb>
+                                                                        <input [(value)]=yrsHighValue matSliderEndThumb>
+                                                                      </mat-slider>
+                                                                      
+                                                                </span>
+                                          
+            
+            
+                                    </div>
+                                </div>
+                             
+                                <div class="row disCol"style="margin:0px; padding-top:16px; padding-bottom:16px">
+                                    <div class="col-6">
+                                        <span class="sec_title" style="width: 200px;">Annual Salary</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="yrsBox">
+                                            <div class="yrs">
+                                                <span style="color: #202430;">₹</span>
+                                                <div class="vl_slider"></div>
+                                                {{value}}
+                                            </div>
+                                            <span style="color: #7C8493;width: 18;height: 26;">to</span>
+                                             <div>
+                                                <div class="yrs">
+                                                    <span style="color: #202430;">₹</span>
                 
-                    <div class="row disCol" style="margin:0px; padding-bottom:16px; padding-top:16px">
-                        <div class="col-6">
-                            <span class="sec_title" style="  white-space: nowrap;
-                            ">Job Types</span>
-                        </div>
-                        <div class="col">
-                            <p style="font-family:Epilogue;font-size:16px;color:#515B6F;font-weight:600" class="sec_title">Select job Type</p>
-                            <select class="form-select width" aria-label="Default select example" [(ngModel)]="jobType" [ngModelOptions]="{standalone: true}" name="jobType" style="outline: none !important;width: 250px;">
-                                <option value="Full-Time">Full-Time</option>
-                                <option value="Part-Time">Part-Time</option>
-                                <option value="Advisory">Advisory</option>
-                                <option value="Contract">Contract</option>
-                                <option value="Others">Others</option>
-                                <option value="All">All</option>
-                            </select>
-                        </div>
-                    </div>
-                 
-                    
-                    <div class="row  pt-4 pb-5" style=" padding-bottom:16px; padding-top:16px">
-                        <div class="col view">
-                            <span class="title justify-content-center view " style="margin:auto; gap:24px"
-                            ><button type="submit" mat-raised-button color="primary" style="width: 205px;    background-color: #4640DE;
-                            "><i class="fa-solid fa-magnifying-glass"></i> Search Candidate</button>
+                                                    <div class="vl_slider"></div>
+                                                    {{highValue}}
+                                                </div>
+                                            </div>
+                                        </div> 
+                <span >
+                                             <mat-slider color='blue' min="0" max="10000000" class="w-50">
+                                                    <input [(value)]=value matSliderStartThumb>
+                                                    <input [(value)]=highValue matSliderEndThumb>
+                                                  </mat-slider>
+                                              
+                                        </span>
+                                    </div>
             
-                        </span>
-                        </div>
-                    </div>
-                </form>
-           
-                <div *ngIf="filteredCandidate.length <= 0 && isSubmitted"  class="row" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px; padding-top:16px">
-                    <div class="col">
-                        <span class="title d-flex justify-content-center " style="margin: auto;">Sorry no such candidate found !
-                        </span>
-                    </div>
-                </div>
-              
-               <div>
-                <div class="row" *ngIf="filteredCandidate.length > 0">
-                    <div class="col">
-                        <span class="title">Candidates
-                        </span>
-                    </div>
-                </div>
-                <table *ngIf="filteredCandidate.length > 0"
-                    class="my-table" class="table  custom-table" style="height: 500px;font-size: medium; margin-top:20px">
-                    <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
-                        <tr>
+                                 
+                            </div>
+                             
+                                <div class="row" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px;">
+                                    <div class="col-6" style="margin:auto">
+                                        <span *ngIf="(!postForm.get('maxSalary')?.valid && postForm.get('maxSalary')?.touched) || (!postForm.get('minSalary')?.valid && postForm.get('minSalary')?.touched) " class="help-block" class="errors" style="position: relative;top:18px" >Please enter a value greater than 0
+                                        </span>
+                                    </div>
+                                   
+                                </div>
                         
-                            <th scope="col">Full Name &nbsp;
-                            </th>
-                            <th scope="col">Hiring Stage &nbsp;
-                            </th>
-                            <th scope="col">Applied Date &nbsp;
-                            </th>
-                            <th scope="col">Job Role
+                            
+                                <div class="row disCol" style="margin:0px; padding-bottom:16px; padding-top:16px">
+                                    <div class="col-6">
+                                        <span class="sec_title" style="  white-space: nowrap;
+                                        ">Job Types</span>
+                                    </div>
+                                    <div class="col">
+                                        <p style="font-family:Epilogue;font-size:16px;color:#515B6F;font-weight:600" class="sec_title">Select job Type</p>
+                                        <select class="form-select width" aria-label="Default select example" [(ngModel)]="jobType" [ngModelOptions]="{standalone: true}" name="jobType" style="outline: none !important;width: 250px;">
+                                            <option value="Full-Time">Full-Time</option>
+                                            <option value="Part-Time">Part-Time</option>
+                                            <option value="Advisory">Advisory</option>
+                                            <option value="Contract">Contract</option>
+                                            <option value="Others">Others</option>
+                                            <option value="All">All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                             
                                 
-                            </th>
-                            <th scope="col">Location
-                                
-                            </th>
+                                <div class="row  pt-4 pb-5" style=" padding-bottom:16px; padding-top:16px">
+                                    <div class="col view">
+                                        <span class="title justify-content-center view " style="margin:auto; gap:24px"
+                                        ><button type="submit" mat-raised-button color="primary" style="width: 205px;    background-color: #4640DE;
+                                        "><i class="fa-solid fa-magnifying-glass"></i> Search Candidate</button>
+                                    </span>
+                                    </div>
+                                </div>
+                            </form>
+                            <div  class="row" *ngIf="onSerachCandidate">
+                                <div class="col" >
+                                    <div class="lds-ring"  style=" position: relative;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);" *ngIf="!result"><div></div><div></div><div></div><div></div></div>
+                            
+                                </div>
+                            </div>
+                            <div *ngIf="filteredCandidate.length <= 0 && result"  class="row" style="border-bottom: 1px solid #D6DDEB;margin:0px; padding-bottom:16px; padding-top:16px">
+                                <div class="col">
+                                    <span class="title d-flex justify-content-center " style="margin: auto;">Sorry no such candidate found !
+                                    </span>
+                                </div>
+                            </div>
                           
-                        </tr>
-                    </thead><br>
-                    <tbody
-                        style="padding-top: 50px;">
-                        <tr *ngFor="let candidate of filteredCandidate; let i=index" style=" border: 1px solid lightgrey;font-weight: 400;height:fit-content;font:500 black;height:30px;">
-                        
-                            <td class="candidateDetails">
-
-                                {{candidate.candidateName}}</td>
-                        
-                            <td style="height:15px">
-                                <button [ngClass]="{
-                             'Inreview': candidate.candidateInterviewStatus === 'Inreview',
-                             'Shortlisted': candidate.candidateInterviewStatus === 'Shortlisted',
-                             'Declined': candidate.candidateInterviewStatus === 'Declined',
-                             'Hired': candidate.candidateInterviewStatus === 'Hired',
-                             'Interviewed': candidate.candidateInterviewStatus === 'Interviewed',
-                                                                  }" style="padding:5px;border-radius:20px;justify-content: center;width:100px;background-color: #fff;font-weight: 500;">{{candidate.candidateInterviewStatus}}</button>
-                            </td>
-                           
-                            <td class="candidateDetails">{{candidate.appliedDate}}</td>
-                            <td class="candidateDetails">{{candidate.jobRole}}</td>
-                            <td class="candidateDetails">{{candidate.location}}</td>
-
-                           
-                            <td>
-                                <i  class="fa fa-trash" style="cursor: pointer;font-size: medium;" (click)="deleteCandidate(i)"></i>
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table><br>
-                
+                           <div>
+                            <div class="row" *ngIf="filteredCandidate.length > 0">
+                                <div class="col">
+                                    <span class="title">Candidates
+                                    </span>
+                                </div>
+                            </div>
+                            <table *ngIf="filteredCandidate.length > 0"
+                                class="my-table" class="table  custom-table" style="height: 500px;font-size: medium; margin-top:20px">
+                                <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
+                                    <tr>
+                                    
+                                        <th scope="col">Full Name &nbsp;
+                                        </th>
+                                        <th scope="col">Hiring Stage &nbsp;
+                                        </th>
+                                        <th scope="col">Job Role
+                                            
+                                        </th>
+                                        <th scope="col">Current Location
+                                            
+                                        </th>
+                                        <th scope="col">Job Types
+                                            
+                                        </th>
+                                      
+                                    </tr>
+                                </thead><br>
+                                <tbody
+                                    style="padding-top: 50px;">
+                                    <tr *ngFor="let candidate of filteredCandidate.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage); let i=index" style=" border: 1px solid lightgrey;font-weight: 400;height:fit-content;font:500 black;height:30px;">
+                                    
+                                        <td class="candidateDetails">
+            
+                                            {{candidate.candidateName}}</td>
+                                    
+                                        <td style="height:15px">
+                                            <button [ngClass]="{
+                                         'Inreview': candidate.hiringStage === 'Inreview',
+                                         'Shortlisted': candidate.hiringStage === 'Shortlisted',
+                                         'Declined': candidate.hiringStage === 'Declined',
+                                         'Hired': candidate.hiringStage === 'Hired',
+                                         'Interviewed': candidate.hiringStage === 'Interviewed',
+                                                                              }" style="padding:5px;border-radius:20px;justify-content: center;width:100px;background-color: #fff;font-weight: 500;">{{candidate.hiringStage}}</button>
+                                        </td>
+                                       
+                                        <td class="candidateDetails">{{candidate.jobRole}}</td>
+                                        <td class="candidateDetails">{{candidate.currentLocation}}</td>
+                                        <td class="candidateDetails">{{candidate.jobType}}</td>
+            
+                                        <td>
+                                            <i  class="fa fa-trash" style="cursor: pointer;font-size: medium;" (click)="deleteCandidate(i)"></i>
+                                        </td>
+            
+                                    </tr>
+            
+                                </tbody>
+            
+                            </table><br>
+                            <div class="row" *ngIf="result && (filteredCandidate.length > 0)">
+                                <div class="col-6" style=" bottom: 15px;">
+                                    <div class="simple_text" style="color:grey"><br>
+                                        &nbsp;&nbsp;<span style="color:
+                                                                        #7C8493;">View</span>
+                                        &nbsp;&nbsp;<select
+                                            [(ngModel)]="itemsPerPage" style="border-color:1px lightgrey;padding:12px">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                        &nbsp;&nbsp;<span style="color:
+                                                                        #7C8493;">Jobs per Page</span>
+                                    </div>
+            
+                                </div>
+                                <div class="col">
+                                    <div class="pagination" style="position: absolute;right: 0;">
+                                        <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1" style="border:none;background-color: white;padding:14px">
+                                            <i class="bi bi-chevron-left" style="color:black;font-size:24px;font-weight: bold;"></i>
+                                        </button>
+            
+                                        &nbsp;&nbsp;
+            
+                                        <span style="background-color: #4640de;padding:14px;color:#fff;border-radius: 5px;width: 50px;text-align: center;">
+                                            {{ currentPage }}
+                                        </span>
+            
+                                        &nbsp;
+            
+                                        <button  [disabled]="currentPage === getTotalPages()" (click)="currentPage = currentPage + 1" style="border:none;background-color: white;padding:14px">
+                                            <i class="bi bi-chevron-right" style="color:black;font-size:24px;font-weight: bold;"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+            </div>
+            <mat-toolbar color="primary" class="footer">
+                <div class="bottom">
+                  <p>2023 @ Recruiter Genie.</p>
+                  <div class="icons">
+                      <a href="#"><i class="fa-brands fa-facebook" style="color:white;"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram" style="color:white;"></i></a>
+                      <a href="#"><i class="fa-solid fa-basketball" style="color:white;"></i></a>
+                      <a href="#"><i class="fa-brands fa-linkedin" style="color:white;"></i></a>
+                      <a href="#"><i class="fa-brands fa-twitter" style="color:white;"></i></a>            
+                  </div>
+              </div>
+               </mat-toolbar>
+            
         </div>
-    </div>
-
-</div>
-</div>
-</div>
-<mat-toolbar color="primary" class="footer">
-    <div class="bottom">
-      <p>2023 @ Recruiter Genie.</p>
-      <div class="icons">
-          <a href="#"><i class="fa-brands fa-facebook" style="color:white;"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram" style="color:white;"></i></a>
-          <a href="#"><i class="fa-solid fa-basketball" style="color:white;"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin" style="color:white;"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter" style="color:white;"></i></a>            
-      </div>
-  </div>
-   </mat-toolbar>
+    </mat-sidenav-content>
+</mat-sidenav-container>
