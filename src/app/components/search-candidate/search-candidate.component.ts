@@ -39,7 +39,6 @@ highValue:number=6000000;
 ngOnInit(): void {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-
   this.initForm()
   
 }
@@ -183,5 +182,8 @@ getTotalPages(): number {
   const totalPages = Math.ceil(this.filteredCandidate.length / this.itemsPerPage);
   return totalPages;
 }
-
+onEditCandidate(id:string){
+  console.log(id)
+  this.router.navigate(['/editCandidate/'+id])
+}
 }

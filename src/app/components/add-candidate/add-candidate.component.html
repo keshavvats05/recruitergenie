@@ -1,5 +1,5 @@
-<mat-sidenav-container>
-    <mat-sidenav #sidenav [opened]="false"  style="width:30vw;">
+<mat-sidenav-container *ngIf="result">
+    <mat-sidenav #sidenav [opened]="false"  style="width:70vw;">
         <mat-nav-list>
             <a mat-list-item routerLink="/home" routerLink="/home"><span class="sidenav">Home</span></a>
             <a mat-list-item routerLink="/searchCandidate"><span class="sidenav">Search Candidate</span></a>
@@ -8,13 +8,13 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div style="height:97vh;">
+        <div style="height:100vh;">
             <mat-toolbar class="header" color="primary">
                 <button mat-icon-button (click)="sidenav.toggle();">
                     <mat-icon  >menu</mat-icon>
                 </button>
                   <div style="margin: auto;">
-                        Add Candidate
+                    {{editMode? 'Edit Candidate' : 'Add Candidate'}}
                 </div>
                 <button  style="width: 100px;margin-right: 10px;    font-family: 'Epilogue'; font-weight:600;
                 font-size: 1.1vw;
@@ -106,9 +106,9 @@
                 </div>
             </div>
             
-            <button type="submit" mat-raised-button color="primary" style="width: 205px;    background-color: #4640DE;position:absolute;right:0px;margin-top:16px;
-            " ><i class="fa-solid fa-plus"></i> Add Candidate</button>
-            <app-alert *ngIf="isSubmitted" (close)="onClose()"></app-alert>
+            <button type="submit" mat-raised-button color="primary" style="padding:10px 30px 10px 30px; background-color: #4640DE;position:absolute;right:0px;margin-top:16px;margin-right: 25px;
+            " >{{editMode? 'Update':'Save'}}</button>
+            <app-alert *ngIf="isSubmitted" [editMode]="editMode" (close)="onClose()"></app-alert>
             </form>
 
         </div>

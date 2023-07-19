@@ -1,7 +1,7 @@
 <!-- backdrop blocks access to reset of the pages and ensures that the focus is on the alert box -->
 <div class="backdrop" (click)="onClose()">
     <div class="alert-box">
-        <p>The Candidate has been successfully added</p>
+        <p>{{editMode? 'The Candidate has been successfully updated':'The Candidate has been successfully added'}}</p>
         <div class="alert-box-action">
             <button class="btn btn-primary" (click)="onClose()">Close</button>
         </div>

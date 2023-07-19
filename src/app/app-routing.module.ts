@@ -17,7 +17,8 @@ const routes: Routes = [
 },
 {path:'addCandidate', component:AddCandidateComponent,
 canActivate :[AuthGuard]
-}
+},
+{path:'editCandidate/:id',component:AddCandidateComponent}
 
 ]
 

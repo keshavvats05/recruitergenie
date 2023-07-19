@@ -1,18 +1,5 @@
-<mat-toolbar class="header" color="primary">
-    <button mat-icon-button (click)="sidenav.toggle();">
-        <mat-icon  >menu</mat-icon>
-    </button>
-   
-      <div style="margin: auto;">
-            Candidate Search
-    </div>
-    <button  style="width: 100px;margin-right: 10px;    font-family: 'Epilogue'; font-weight:600;
-    font-size: 1.1vw;
-    " mat-raised-button (click)="onLogout()"><span style="font-size: 15px;" >Logout</span></button>
-   
-  </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav #sidenav [opened]="false"  style="width:30vw;">
+    <mat-sidenav #sidenav [opened]="false"  style="width:70vw;">
         <mat-nav-list>
             <a mat-list-item routerLink="/home"><span class="sidenav">Home</span></a>
             <a mat-list-item routerLink="/addCandidate"><span class="sidenav">Add Candidate</span></a>
@@ -20,7 +7,20 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div style="height:89vh;">
+        <div style="height:100vh;">
+            <mat-toolbar class="header" color="primary">
+                <button mat-icon-button (click)="sidenav.toggle();">
+                    <mat-icon  >menu</mat-icon>
+                </button>
+               
+                  <div style="margin: auto;">
+                        Candidate Search
+                </div>
+                <button  style="width: 100px;margin-right: 10px;    font-family: 'Epilogue'; font-weight:600;
+                font-size: 1.1vw;
+                " mat-raised-button (click)="onLogout()"><span style="font-size: 15px;" >Logout</span></button>
+               
+              </mat-toolbar>
           
             <div class="container pl-0 pr-0">
                 <div class="d-flex ">
@@ -217,11 +217,13 @@
                                         <td class="candidateDetails">{{candidate.jobRole}}</td>
                                         <td class="candidateDetails">{{candidate.currentLocation}}</td>
                                         <td class="candidateDetails">{{candidate.jobType}}</td>
-            
-                                        <td>
-                                            <i  class="fa fa-trash" style="cursor: pointer;font-size: medium;" (click)="deleteCandidate(i)"></i>
+                                        <td style="cursor: pointer;">
+                                            <i class="fa-regular fa-pen-to-square"(click)="onEditCandidate(candidate.id)"></i>
                                         </td>
-            
+                                        <td>
+                                            <i  class="fa fa-trash" style="cursor: pointer;" (click)="deleteCandidate(i)"></i>
+                                        </td>
+                                       
                                     </tr>
             
                                 </tbody>
