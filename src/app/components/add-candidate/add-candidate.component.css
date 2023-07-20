@@ -1,9 +1,6 @@
-@media (max-width: 540px) {
+@media (max-width: 375px) {
   .header {
-    width: 540px;
-  }
-  .footer {
-    width: 540px;
+    width: 375px;
   }
 }
 button {

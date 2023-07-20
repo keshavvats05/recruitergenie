@@ -175,60 +175,63 @@
                                     </span>
                                 </div>
                             </div>
-                            <table *ngIf="filteredCandidate.length > 0"
-                                class="my-table" class="table  custom-table" style="height: 500px;font-size: medium; margin-top:20px">
-                                <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
-                                    <tr>
-                                    
-                                        <th scope="col">Full Name &nbsp;
-                                        </th>
-                                        <th scope="col">Hiring Stage &nbsp;
-                                        </th>
-                                        <th scope="col">Job Role
-                                            
-                                        </th>
-                                        <th scope="col">Current Location
-                                            
-                                        </th>
-                                        <th scope="col">Job Types
-                                            
-                                        </th>
-                                      
-                                    </tr>
-                                </thead><br>
-                                <tbody
-                                    style="padding-top: 50px;">
-                                    <tr *ngFor="let candidate of filteredCandidate.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage); let i=index" style=" border: 1px solid lightgrey;font-weight: 400;height:fit-content;font:500 black;height:30px;">
-                                    
-                                        <td class="candidateDetails">
-            
-                                            {{candidate.candidateName}}</td>
-                                    
-                                        <td style="height:15px">
-                                            <button [ngClass]="{
-                                         'Inreview': candidate.hiringStage === 'Inreview',
-                                         'Shortlisted': candidate.hiringStage === 'Shortlisted',
-                                         'Declined': candidate.hiringStage === 'Declined',
-                                         'Hired': candidate.hiringStage === 'Hired',
-                                         'Interviewed': candidate.hiringStage === 'Interviewed',
-                                                                              }" style="padding:5px;border-radius:20px;justify-content: center;width:100px;background-color: #fff;font-weight: 500;">{{candidate.hiringStage}}</button>
-                                        </td>
-                                       
-                                        <td class="candidateDetails">{{candidate.jobRole}}</td>
-                                        <td class="candidateDetails">{{candidate.currentLocation}}</td>
-                                        <td class="candidateDetails">{{candidate.jobType}}</td>
-                                        <td style="cursor: pointer;">
-                                            <i class="fa-regular fa-pen-to-square"(click)="onEditCandidate(candidate.id)"></i>
-                                        </td>
-                                        <td>
-                                            <i  class="fa fa-trash" style="cursor: pointer;" (click)="deleteCandidate(i)"></i>
-                                        </td>
-                                       
-                                    </tr>
-            
-                                </tbody>
-            
-                            </table><br>
+                         <div style="overflow-x:auto;">
+                          <table *ngIf="filteredCandidate.length > 0"
+                            class="my-table" class="table  custom-table" style="height: 500px;font-size: medium; margin-top:20px">
+                            <thead style=" border: 1px solid lightgrey;color:grey;font-weight:lighter;" class="tableHeader">
+                                <tr>
+                                
+                                    <th scope="col">Full Name &nbsp;
+                                    </th>
+                                    <th scope="col">Hiring Stage &nbsp;
+                                    </th>
+                                    <th scope="col">Job Role
+                                        
+                                    </th>
+                                    <th scope="col">Current Location
+                                        
+                                    </th>
+                                    <th scope="col">Job Types
+                                        
+                                    </th>
+                                  
+                                </tr>
+                            </thead><br>
+                            <tbody
+                                style="padding-top: 50px;">
+                                <tr *ngFor="let candidate of filteredCandidate.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage); let i=index" style=" border: 1px solid lightgrey;font-weight: 400;height:fit-content;font:500 black;height:30px;">
+                                
+                                    <td class="candidateDetails">
+        
+                                        {{candidate.candidateName}}</td>
+                                
+                                    <td style="height:15px">
+                                        <button [ngClass]="{
+                                     'Inreview': candidate.hiringStage === 'Inreview',
+                                     'Shortlisted': candidate.hiringStage === 'Shortlisted',
+                                     'Declined': candidate.hiringStage === 'Declined',
+                                     'Hired': candidate.hiringStage === 'Hired',
+                                     'Interviewed': candidate.hiringStage === 'Interviewed',
+                                                                          }" style="padding:5px;border-radius:20px;justify-content: center;width:100px;background-color: #fff;font-weight: 500;">{{candidate.hiringStage}}</button>
+                                    </td>
+                                   
+                                    <td class="candidateDetails">{{candidate.jobRole}}</td>
+                                    <td class="candidateDetails">{{candidate.currentLocation}}</td>
+                                    <td class="candidateDetails">{{candidate.jobType}}</td>
+                                    <td style="cursor: pointer;">
+                                        <i class="fa-regular fa-pen-to-square"(click)="onEditCandidate(candidate.id)"></i>
+                                    </td>
+                                    <td>
+                                        <i  class="fa fa-trash" style="cursor: pointer;" (click)="deleteCandidate(i)"></i>
+                                    </td>
+                                   
+                                </tr>
+        
+                            </tbody>
+        
+                        </table>
+                         </div>
+                            <br>
                             <div class="row" *ngIf="result && (filteredCandidate.length > 0)">
                                 <div class="col-6" style=" bottom: 15px;">
                                     <div class="simple_text" style="color:grey"><br>
